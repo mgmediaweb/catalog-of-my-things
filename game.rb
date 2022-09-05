@@ -12,7 +12,7 @@ class Game < Item
   end
 
   def can_be_archived?
-    last_played_at = Date.today.year - @last_played_at
+    last_played_at = Time.new.year - Date.parse(@last_played_at)
     super() && last_played_at > 2 ? true : false
   end
 end

@@ -6,8 +6,11 @@ describe Author do
     @item = Item.new(2010, archived: false)
   end
   context '#initialize' do 
-    it '' do 
+    it 'Should create an instance of the author' do 
+    expect (@author).to be_an_instance_of Author
 
+    it 'Crate a new instance of the author' do
+      expect(@author).to be_a(Author)
     end
     
     it 'Expects to add item to items array' do 
