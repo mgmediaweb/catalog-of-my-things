@@ -13,11 +13,11 @@ class Author
 
   def add_item
     # item.author = self
-    @io_author = IOclass.new('authors')
+    #@io_author = IOclass.new('authors')
     @items << self unless @items.include?(self)
-    @authors_list << self unless @items.include?(self)
+    #@authors_list << self unless @items.include?(self)
 
-    @io_author.write(self)
+    # @io_author.write(self)
     p @items
     p @authors_list
   end
