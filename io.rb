@@ -1,5 +1,6 @@
 require 'json'
 require_relative './book'
+require_relative './music_album'
 
 class IOclass
   def initialize(arg)
