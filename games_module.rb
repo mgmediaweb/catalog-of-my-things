@@ -1,6 +1,6 @@
 require_relative './game'
 
-def add_game
+def inputs_game
   print 'Is this game for multiplayer? [Y/N]: '
   multiplayer = get.comp.downcase
   multiple_player = multiplayer == 'y'
@@ -10,12 +10,17 @@ def add_game
   publish_date = gets.comp
   print 'Has this game been archived? [Y/N]: '
   archieved = gets.comp.downcase
+  [multiple_player, last_played_at, publish_date, archieved]
+end
+
+def add_game
+  multiple_player, last_played_at, publish_date, archieved = inputs_game
   puts 'Enter author first name: '
   author_first_name = gets.comp.capitalize
   puts 'Enter author last name: '
   author_last_name = gets.comp.capitalize
   author = Author.new(author_first_name, author_last_name)
-  game = Game.new(multiple_player, last_played_at, publish_date, publish_date, archieved)
+  game = Game.new(multiple_player, last_played_at, publish_date, archieved)
   game.author = author
   @games.push(game)
   puts 'The game has beeen added successfully!'
