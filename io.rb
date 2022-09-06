@@ -54,9 +54,7 @@ class IOclass
       }
     when 'albums'
       {
-        'id' => item.id, 'title' => item.title,
-        'author' => item.author, 'publish_date' => item.publish_date,
-        'spotify' => item.spotify
+        'name' => item.name, 'on_spotify' => item.on_spotify
       }
     when 'games'
       {
@@ -77,8 +75,8 @@ class IOclass
           item['title'], item['author'], item['publish_date'], item['publisher'], item['cover_state'], item['id']
         )
       when 'albums'
-        arr_items << Album.new(
-          item['title'], item['author'], item['publish_date'], item['spotify'], item['id']
+        arr_items << MusicAlbum.new(
+          item['name'], item['on_spotify']
         )
       when 'games'
         arr_items << Game.new(
