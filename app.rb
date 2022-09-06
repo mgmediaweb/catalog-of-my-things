@@ -9,6 +9,8 @@ require_relative './views/genres'
 require_relative './views/labels'
 
 class App
+  attr_accessor :authors_list
+
   def initialize
     @album_screen = AlbumsScreen.new
     @author_screen = AuthorsScreen.new
@@ -17,16 +19,19 @@ class App
     @genre_screen = GenresScreen.new
     @label_screen = LabelsScreen.new
 
-    @io_book = IOclass.new('books')
     @io_album = IOclass.new('albums')
+    @io_author = IOclass.new('authors')
+    @io_book = IOclass.new('books')
     @io_game = IOclass.new('games')
+    @io_genre = IOclass.new('genres')
+    @io_label = IOclass.new('labels')
 
-    @album_list = []
-    @authors_list = []
+    @album_list = @io_album.read
+    @authors_list = @io_author.read
     @book_list = @io_book.read
-    @game_list = []
-    @genre_list = []
-    @label_list = []
+    @game_list = @io_game.read
+    @genre_list = @io_genre.read
+    @label_list = @io_label.read
   end
 
   def list_books
@@ -52,7 +57,7 @@ class App
   def list_labels
     @label_screen.list_labels(@label_list)
     gets.chomp
-  end  
+  end
 
   def list_authors
     @author_screen.list_authors(@authors_list)
@@ -63,8 +68,10 @@ class App
     @book_screen.add_book
     print '   Enter a title: '
     title = gets.chomp.capitalize
-    print '   Enter a author: '
-    author = gets.chomp.capitalize
+    print '   Enter a author first name: '
+    author_first_name = gets.chomp.capitalize
+    print '   Enter a author last name: '
+    author_last_name = gets.chomp.capitalize
     print '   Enter a publish date (YYYY-MM-DD): '
     publish_date = gets.chomp.capitalize
     print '   Enter a publisher: '
@@ -73,10 +80,14 @@ class App
     cover_state = gets.chomp.to_i
 
     cover_quality = %w[unknow good regular bad]
+    author = "#{author_first_name.strip} #{author_last_name.strip}"
 
-    @book_list << Book.new(
+    new_book = Book.new(
       title, author, publish_date, publisher, cover_quality[cover_state]
     )
+
+    @book_list << new_book unless @book_list.include?(new_book)
+
     @io_book.write(@book_list)
     goback
   end

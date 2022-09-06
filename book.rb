@@ -9,12 +9,13 @@ class Book < Item
     publish_date,
     publisher,
     cover_state,
+    label = nil,
+    genre = nil,
     id = nil
   )
-    super(id, publish_date)
+    super(id, publish_date, author, label, genre)
 
     @title = title
-    @author = author
     @publish_date = publish_date
     @publisher = publisher
     @cover_state = cover_state

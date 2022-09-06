@@ -2,23 +2,29 @@ require 'json'
 require_relative './book'
 
 class IOclass
-  def initialize(arg)
-    @type = arg
+  def initialize(opc)
+    @type = opc
 
     @file = case @type
-            when 'books'
-              './json/books.json'
             when 'albums'
               './json/albums.json'
+            when 'authors'
+              './json/authors.json'
+            when 'books'
+              './json/books.json'
             when 'games'
               './json/games.json'
+            when 'genres'
+              './json/genres.json'
+            when 'labels'
+              './json/labels.json'
             else
               './json/default.json'
             end
   end
 
   def read
-    file = File.open(@file)
+    file = File.open(@file, 'a+')
     file_data = file.read
     arr_items = []
 
@@ -45,17 +51,23 @@ class IOclass
 
   def array_fill(item)
     case @type
-    when 'books'
-      {
-        'id' => item.id, 'title' => item.title,
-        'author' => item.author, 'publish_date' => item.publish_date,
-        'publisher' => item.publisher, 'cover_state' => item.cover_state
-      }
     when 'albums'
       {
         'id' => item.id, 'title' => item.title,
         'author' => item.author, 'publish_date' => item.publish_date,
         'spotify' => item.spotify
+      }
+    when 'authors'
+      {
+        'id' => item.id,
+        'first_name' => item.first_name,
+        'last_name' => item.last_name
+      }
+    when 'books'
+      {
+        'id' => item.id, 'title' => item.title,
+        'author' => item.author, 'publish_date' => item.publish_date,
+        'publisher' => item.publisher, 'cover_state' => item.cover_state
       }
     when 'games'
       {

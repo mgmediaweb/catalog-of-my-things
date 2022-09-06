@@ -47,7 +47,7 @@ class MainScreen
   end
 
   def header
-    system('cls')
+    # system('cls')
     print "\n╔═══════════════════════════════════════════════════════════╗"
     print "#{blankline}\n║                   Catalog of my things                    ║"
     print "#{blankline}\n╠═══════════════════════════════════════════════════════════╣"
