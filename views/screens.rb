@@ -6,9 +6,15 @@ class MainScreen
   def initial
     header
     print "\n║                                                           ║"
-    print "\n║  [1] Books                                                ║"
-    print "\n║  [2] Music albums                                         ║"
-    print "\n║  [3] Games                                                ║"
+    print "\n║  [1] List Books                                           ║"
+    print "\n║  [2] List Music Albums                                    ║"
+    print "\n║  [3] List Games                                           ║"
+    print "\n║  [4] List Genres                                          ║"
+    print "\n║  [5] List Labels                                          ║"
+    print "\n║  [6] List Authors                                         ║"
+    print "\n║  [7] Add a new Book                                       ║"
+    print "\n║  [8] Add a new Music Album                                ║"
+    print "\n║  [9] Add a new Game                                       ║"
     print "\n║  [0] Exit.                                                ║"
     print "#{blankline}\n╚═══════════════════════════════════════════════════════════╝\n\n"
   end

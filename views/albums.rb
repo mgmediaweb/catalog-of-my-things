@@ -1,17 +1,6 @@
 require_relative './screens'
 
 class AlbumsScreen < MainScreen
-  def admin_albums
-    header
-    print "\n║  Music albums                                             ║"
-    print "\n╠═══════════════════════════════════════════════════════════╣"
-    print "#{blankline}\n║  [1] List of all Albums                                   ║"
-    print "\n║  [2] List all genres                                      ║"
-    print "\n║  [3] Add a music album                                    ║"
-    print "\n║  [0] Exit.                                                ║"
-    footer_empty
-  end
-
   def add_album
     header
     print "\n║  Music albums: Add new                                    ║"
