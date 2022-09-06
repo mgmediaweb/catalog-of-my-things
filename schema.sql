@@ -5,7 +5,7 @@ CREATE TABLE games (
     multiplayer BOOLEAN NOT NULL,
     last_played_at BOOLEAN NOT NULL,
     publish_date DATE NOT NULL,
-    archived BOOLEAN NOT NULL  
+    archived BOOLEAN NOT NULL 
 );
 
 -- Creating authors table

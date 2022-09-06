@@ -11,7 +11,7 @@ describe Author do
       expect(@author).to be_an_instance_of Author
     end
 
-    it 'Crate a new instance of the author' do
+    it 'Create a new instance of the author' do
       expect(@author).to be_a(Author)
     end
 
@@ -20,7 +20,7 @@ describe Author do
       expect(@author.items.length).to eq 1
     end
 
-    it 'Should add add an item to an author' do
+    it 'Should add an item to an author' do
       author = Author.new('Hadis', 'Alemayehu')
       game1 = Game.new('Tennis', '2022-09-06', '2022-09-06')
       game2 = Game.new('Tennis', '2022-09-06', '2022-09-06')

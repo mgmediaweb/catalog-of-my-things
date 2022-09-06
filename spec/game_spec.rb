@@ -2,8 +2,8 @@ require_relative './game'
 
 describe Game do
   before(:each) do
-    @game1 = Game.new(true, 2021, 2019, false)
-    @game2 = Game.new(true, 2020, 2019, false)
+    @game1 = Game.new(true, 2021, 2015, false)
+    @game2 = Game.new(true, 2020, 2015, false)
   end
 
   it 'Crate a new instance of Game' do

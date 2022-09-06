@@ -1,6 +1,6 @@
 require_relative './game'
 
-def write_games_data
+def write_games
   games = []
   @games.each do |game|
     @player = {
@@ -8,17 +8,17 @@ def write_games_data
       'last_name' => game.author.last_name,
       'multiplayer' => game.multiplayer,
       'last_played_at' => game.last_played_at,
-      'puhlish_date' => game.puhlish_date,
+      'publish_date' => game.publish_date,
       'archived' => game.archived
     }
     games << @player
   end
   
   FileUtils.mkdir_p('storage')
-  File.write('./storage/games.json', JSON.preety_generate(games), mode: 'w')
+  File.write('./storage/games.json', JSON.pretty_generate(games), mode: 'w')
 end
 
-def read_games_data
+def read_games
   return unless File.exist?('./storage/games.json')
 
   games = File.read('./storage/games.json')
