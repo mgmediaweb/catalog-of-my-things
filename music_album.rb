@@ -1,30 +1,16 @@
 require_relative './item'
 
-class Book < Item
-  attr_accessor :title, :author, :publish_date, :publisher, :cover_state
+class MusicAlbum < Item
+  attr_accessor :on_spotify, :id, :name, :publish_date
 
-  def initialize(
-    title,
-    author,
-    publish_date,
-    publisher,
-    cover_state,
-    id = nil
-  )
-    super(id, publish_date)
-
-    @title = title
-    @author = author
-    @publish_date = publish_date
-    @publisher = publisher
-    @cover_state = cover_state
+  def initialize(name, publish_date, on_spotify)
+    super(publish_date)
+    @id = Random.rand(1...1000)
+    @name = name
+    @on_spotify = on_spotify
   end
 
-  private
-
   def can_be_archived?
-    return true if super || @cover_state == 'bad'
-
-    false
+    super && @on_spotify == true
   end
 end

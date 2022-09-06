@@ -1,4 +1,4 @@
-class Label
+class Genre
   attr_reader :id, :items
   attr_accessor :title, :color
 
