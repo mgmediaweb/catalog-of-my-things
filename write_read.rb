@@ -13,7 +13,7 @@ def write_games_data
     }
     games << @player
   end
-
+  
   FileUtils.mkdir_p('storage')
   File.write('./storage/games.json', JSON.preety_generate(games), mode: 'w')
 end
