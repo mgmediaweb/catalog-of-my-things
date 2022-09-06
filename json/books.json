@@ -1,0 +1,26 @@
+[
+  {
+    "id": 953,
+    "title": "The da vinci code",
+    "author": "Dan brown",
+    "publish_date": "2000-10-08",
+    "publisher": "Austral",
+    "cover_state": "regular"
+  },
+  {
+    "id": 437,
+    "title": "My story",
+    "author": "Me",
+    "publish_date": "2018-05-05",
+    "publisher": "Abc",
+    "cover_state": "good"
+  },
+  {
+    "id": 658,
+    "title": "Moby dick",
+    "author": "Unknow",
+    "publish_date": "1840-12-10",
+    "publisher": "Unknow",
+    "cover_state": "bad"
+  }
+]
