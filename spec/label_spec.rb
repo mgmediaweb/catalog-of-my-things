@@ -10,5 +10,4 @@ describe Label do
     expect(@label.title).to eq('Wazi Buda')
     expect(@label.color).to eq('red')
   end
-
 end

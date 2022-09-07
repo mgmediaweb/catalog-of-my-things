@@ -12,5 +12,4 @@ describe Genre do
   it 'should `return the name` of the Genre' do
     expect(@genre.name).to eq('Pop')
   end
-
 end
