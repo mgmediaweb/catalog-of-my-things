@@ -1,3 +1,4 @@
+require 'date'
 require_relative './io'
 require_relative './book'
 require_relative './views/albums'
@@ -68,8 +69,9 @@ class App
     @book_screen.add_book('Add a new Book')
     print '   Enter a title: '
     title = gets.chomp.capitalize
-    print '   Enter a publish date (YYYY-MM-DD): '
-    publish_date = gets.chomp.strip
+
+    publish_date = handle_date
+
     print '   Enter a publisher: '
     publisher = gets.chomp.strip.capitalize
     print "   Enter a cover state:\n   [1] = Good, [2] = Regular, [3] = Bad: "
@@ -80,8 +82,7 @@ class App
     get_label = handle_label
 
     @book_list << Book.new(
-      title, get_author, publish_date, publisher,
-      @cover_quality[cover_state], get_label, get_genre
+      title, get_author, publish_date, publisher, @cover_quality[cover_state], get_label, get_genre
     )
     @io_book.write(@book_list)
     goback
@@ -91,8 +92,9 @@ class App
     @album_screen.add_album
     print '   Enter a title: '
     title = gets.chomp.strip.capitalize
-    print '   Enter a publish date (YYYY-MM-DD): '
-    publish_date = gets.chomp.strip
+
+    publish_date = handle_date
+
     print '   Is available on Spotify [Y/N]: '
     spotify = gets.chomp.upcase
 
@@ -101,8 +103,7 @@ class App
     get_label = handle_label
 
     @album_list << Album.new(
-      title, get_author, publish_date, spotify,
-      get_label, get_genre
+      title, get_author, publish_date, spotify, get_label, get_genre
     )
     @io_album.write(@album_list)
     goback
@@ -112,20 +113,20 @@ class App
     @game_screen.add_game
     print '   Enter a title: '
     title = gets.chomp.strip.capitalize
-    print '   Enter a publish date (YYYY-MM-DD): '
-    publish_date = gets.chomp.strip
+
+    publish_date = handle_date
+
     print '   Is multiplayer: [Y/N]: '
     multiplayer = gets.chomp.strip.upcase
-    print '   Last played at: (YYYY-MM-DD): '
-    last_played = gets.chomp.strip
+
+    last_played = handle_date('Last played at')
 
     get_author = handle_author
     get_genre = handle_genre
     get_label = handle_label
 
     @game_list << Game.new(
-      title, multiplayer, last_played, publish_date,
-      get_author, get_genre, get_label
+      title, multiplayer, last_played, publish_date, get_author, get_genre, get_label
     )
     @io_game.write(@game_list)
     goback
@@ -144,6 +145,21 @@ class App
     end
 
     get_author
+  end
+
+  def handle_date(title = 'Enter a publish date')
+    input_date = nil
+
+    loop do
+      print "   #{title} (YYYY-MM-DD): "
+      input_date = gets.chomp.strip
+
+      break if Mydate.new(input_date).validate
+
+      print "   « Invalid date, please a enter again »\n"
+    end
+
+    input_date
   end
 
   def handle_genre
@@ -179,6 +195,25 @@ class App
   def goback
     @book_screen.success
     sleep(2)
+  end
+end
+
+class Mydate
+  def initialize(input_date)
+    @my_date = input_date.split('-')
+    @year = @my_date[0].to_i.abs
+    @month = @my_date[1].to_i.abs
+    @day = @my_date[2].to_i.abs
+  end
+
+  def validate
+    if @my_date.length == 3 && @month <= 12 && @day <= 31
+      validated = Date.new(@my_date[0].to_i, @my_date[1].to_i, @my_date[2].to_i)
+
+      return true if validated <= Date.parse('2030-12-31') && validated >= Date.parse('1950-01-01')
+    end
+
+    false
   end
 end
 

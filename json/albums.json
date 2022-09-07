@@ -38,5 +38,25 @@
       "first_name": "Guns",
       "last_name": "And roses"
     }
+  },
+  {
+    "id": 173,
+    "title": "Great hits",
+    "publish_date": "1973-09-30",
+    "spotify": "Y",
+    "genre": {
+      "id": 955,
+      "name": "Country"
+    },
+    "label": {
+      "id": 635,
+      "title": "Oldies",
+      "color": "Brown"
+    },
+    "author": {
+      "id": 906,
+      "first_name": "Gonzalo",
+      "last_name": "Medina"
+    }
   }
 ]
