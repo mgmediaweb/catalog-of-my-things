@@ -1,4 +1,4 @@
-require_relative './author'
+require_relative '../author'
 
 describe Author do
   before(:each) do
