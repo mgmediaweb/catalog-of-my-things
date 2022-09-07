@@ -19,5 +19,26 @@
       "first_name": "Dan",
       "last_name": "Brown"
     }
+  },
+  {
+    "id": 974,
+    "title": "Minecraft",
+    "publish_date": "1976-09-17",
+    "multiplayer": "Y",
+    "last_played_at": "2020-05-15",
+    "genre": {
+      "id": 695,
+      "name": "Arcade"
+    },
+    "label": {
+      "id": 836,
+      "title": "Favorite",
+      "color": "Yellow"
+    },
+    "author": {
+      "id": 236,
+      "first_name": "Atari",
+      "last_name": "Japan"
+    }
   }
 ]
