@@ -78,5 +78,25 @@
       "first_name": "Test",
       "last_name": "Tested"
     }
+  },
+  {
+    "id": 739,
+    "title": "Fghjkl",
+    "publish_date": "2022-01-02",
+    "spotify": "N",
+    "genre": {
+      "id": 658,
+      "name": "Fiction"
+    },
+    "label": {
+      "id": 599,
+      "title": "Best sellers",
+      "color": "Red"
+    },
+    "author": {
+      "id": 204,
+      "first_name": "Dan",
+      "last_name": "Brown"
+    }
   }
 ]

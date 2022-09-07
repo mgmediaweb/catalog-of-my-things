@@ -3,7 +3,7 @@ require_relative '../album'
 
 describe Album do
   before :each do
-    @music_album = Album.new('Peeling the Mask', '2010-10-25', false)
+    @music_album = Album.new('Peeling the Mask', '2022-05-01', 'Y', 204, 658, 599)
   end
 
   it 'should return a correct album name' do

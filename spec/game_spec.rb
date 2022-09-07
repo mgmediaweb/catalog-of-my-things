@@ -1,4 +1,4 @@
-require_relative './game'
+require_relative '../game'
 
 describe Game do
   before(:each) do
