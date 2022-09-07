@@ -16,8 +16,4 @@ describe Game do
     expect(@game.multiplayer).to eq 'Y'
     expect(@game.last_played_at).to eq(Date.parse('2013-11-24'))
   end
-
-  # it 'can_be_achieved? return false if @last_played_at is < 2' do
-  #   expert(@game.can_be_archived?).to eq false
-  # end
 end
