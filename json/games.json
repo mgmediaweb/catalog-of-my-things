@@ -19,5 +19,26 @@
       "first_name": "Dan",
       "last_name": "Brown"
     }
+  },
+  {
+    "id": 663,
+    "title": "Fffg",
+    "publish_date": "2011-05-14",
+    "multiplayer": "Y",
+    "last_played_at": "2018-05-04",
+    "genre": {
+      "id": 953,
+      "name": "War"
+    },
+    "label": {
+      "id": 312,
+      "title": "Gift",
+      "color": "Blue"
+    },
+    "author": {
+      "id": 204,
+      "first_name": "Dan",
+      "last_name": "Brown"
+    }
   }
 ]

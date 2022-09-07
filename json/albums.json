@@ -38,5 +38,45 @@
       "first_name": "Guns",
       "last_name": "And roses"
     }
+  },
+  {
+    "id": 24,
+    "title": "Fghjk",
+    "publish_date": "2022-03-05",
+    "spotify": "Y",
+    "genre": {
+      "id": 953,
+      "name": "War"
+    },
+    "label": {
+      "id": 836,
+      "title": "Favorite",
+      "color": "Yellow"
+    },
+    "author": {
+      "id": 760,
+      "first_name": "Abc",
+      "last_name": "Ddd"
+    }
+  },
+  {
+    "id": 222,
+    "title": "Sdfghj",
+    "publish_date": "2013-05-12",
+    "spotify": "N",
+    "genre": {
+      "id": 987,
+      "name": "Genni"
+    },
+    "label": {
+      "id": 338,
+      "title": "Love it",
+      "color": "Black"
+    },
+    "author": {
+      "id": 861,
+      "first_name": "Test",
+      "last_name": "Tested"
+    }
   }
 ]

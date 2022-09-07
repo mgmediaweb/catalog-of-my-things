@@ -61,5 +61,26 @@
       "first_name": "Gonzalo",
       "last_name": "Medina"
     }
+  },
+  {
+    "id": 604,
+    "title": "Ghjk",
+    "publish_date": "2022-03-02",
+    "publisher": "Hj",
+    "cover_state": "bad",
+    "genre": {
+      "id": 813,
+      "name": "Thiller"
+    },
+    "label": {
+      "id": 836,
+      "title": "Favorite",
+      "color": "Yellow"
+    },
+    "author": {
+      "id": 263,
+      "first_name": "Guns",
+      "last_name": "And roses"
+    }
   }
 ]
