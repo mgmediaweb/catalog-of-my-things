@@ -21,24 +21,24 @@
     }
   },
   {
-    "id": 663,
-    "title": "Fffg",
-    "publish_date": "2011-05-14",
+    "id": 974,
+    "title": "Minecraft",
+    "publish_date": "1976-09-17",
     "multiplayer": "Y",
-    "last_played_at": "2018-05-04",
+    "last_played_at": "2020-05-15",
     "genre": {
-      "id": 953,
-      "name": "War"
+      "id": 695,
+      "name": "Arcade"
     },
     "label": {
-      "id": 312,
-      "title": "Gift",
-      "color": "Blue"
+      "id": 836,
+      "title": "Favorite",
+      "color": "Yellow"
     },
     "author": {
-      "id": 204,
-      "first_name": "Dan",
-      "last_name": "Brown"
+      "id": 236,
+      "first_name": "Atari",
+      "last_name": "Japan"
     }
   }
 ]

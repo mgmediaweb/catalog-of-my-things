@@ -40,63 +40,23 @@
     }
   },
   {
-    "id": 24,
-    "title": "Fghjk",
-    "publish_date": "2022-03-05",
+    "id": 173,
+    "title": "Great hits",
+    "publish_date": "1973-09-30",
     "spotify": "Y",
     "genre": {
-      "id": 953,
-      "name": "War"
+      "id": 955,
+      "name": "Country"
     },
     "label": {
-      "id": 836,
-      "title": "Favorite",
-      "color": "Yellow"
+      "id": 635,
+      "title": "Oldies",
+      "color": "Brown"
     },
     "author": {
-      "id": 760,
-      "first_name": "Abc",
-      "last_name": "Ddd"
-    }
-  },
-  {
-    "id": 222,
-    "title": "Sdfghj",
-    "publish_date": "2013-05-12",
-    "spotify": "N",
-    "genre": {
-      "id": 987,
-      "name": "Genni"
-    },
-    "label": {
-      "id": 338,
-      "title": "Love it",
-      "color": "Black"
-    },
-    "author": {
-      "id": 861,
-      "first_name": "Test",
-      "last_name": "Tested"
-    }
-  },
-  {
-    "id": 739,
-    "title": "Fghjkl",
-    "publish_date": "2022-01-02",
-    "spotify": "N",
-    "genre": {
-      "id": 658,
-      "name": "Fiction"
-    },
-    "label": {
-      "id": 599,
-      "title": "Best sellers",
-      "color": "Red"
-    },
-    "author": {
-      "id": 204,
-      "first_name": "Dan",
-      "last_name": "Brown"
+      "id": 906,
+      "first_name": "Gonzalo",
+      "last_name": "Medina"
     }
   }
 ]
