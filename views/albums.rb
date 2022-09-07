@@ -3,7 +3,7 @@ require_relative './screens'
 class AlbumsScreen < MainScreen
   def add_album
     header
-    print "\n║  Music albums: Add new                                    ║"
+    print "\n║  Add a new Music Albums                                   ║"
     print "\n╚═══════════════════════════════════════════════════════════╝\n\n"
   end
 

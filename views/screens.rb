@@ -43,11 +43,11 @@ class MainScreen
   end
 
   def footer_empty
-    print "#{blankline}\n╚═══════════════════════════════════════════════════════════╝\n\n"
+    print "\n╚═══════════════════════════════════════════════════════════╝\n\n"
   end
 
   def header
-    # system('cls')
+    system('cls')
     print "\n╔═══════════════════════════════════════════════════════════╗"
     print "#{blankline}\n║                   Catalog of my things                    ║"
     print "#{blankline}\n╠═══════════════════════════════════════════════════════════╣"

@@ -13,7 +13,7 @@ class GenresScreen < MainScreen
   def loop_genre(data)
     if data.length.positive?
       data.each do |elem|
-        line = "\n║  #{elem.title} (#{elem.author}) "
+        line = "\n║  [#{elem.id}] #{elem.name}"
         print line
         print "#{whitespace(line.length)}║"
       end

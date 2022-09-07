@@ -13,7 +13,7 @@ class AuthorsScreen < MainScreen
   def loop_author(data)
     if data.length.positive?
       data.each do |elem|
-        line = "\n║  #{elem.title} (#{elem.author}) "
+        line = "\n║  [#{elem.id}] #{elem.first_name} #{elem.last_name}"
         print line
         print "#{whitespace(line.length)}║"
       end

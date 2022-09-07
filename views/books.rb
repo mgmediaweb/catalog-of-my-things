@@ -1,10 +1,29 @@
 require_relative './screens'
+require_relative './authors'
+require_relative './genres'
+require_relative './labels'
 
 class BooksScreen < MainScreen
-  def add_book
+  def add_book(title, type = nil, array = nil)
     header
-    print "\n║  Books: Add new                                           ║"
-    print "\n╚═══════════════════════════════════════════════════════════╝\n\n"
+    line = "\n║  #{title}"
+    print line
+    print "#{whitespace(line.length)}║"
+    if array
+      print "\n╠═══════════════════════════════════════════════════════════╣"
+      case type
+      when 'authors'
+        AuthorsScreen.new.loop_author(array)
+      when 'genres'
+        GenresScreen.new.loop_genre(array)
+      when 'labels'
+        LabelsScreen.new.loop_label(array)
+      end
+      print "\n║  [ 0 ] Add a new                                          ║"
+    end
+    footer_empty
+
+    print '   Select a option number: ' if type
   end
 
   def list_books(data)
@@ -19,7 +38,7 @@ class BooksScreen < MainScreen
   def loop_book(data)
     if data.length.positive?
       data.each do |elem|
-        line = "\n║  #{elem.title} (#{elem.author}) - #{elem.cover_state}"
+        line = "\n║  #{elem.title} (#{elem.author.first_name} #{elem.author.last_name}) - #{elem.cover_state}"
         line += ' [Arch]' if elem.archived
         print line
         print "#{whitespace(line.length)}║"

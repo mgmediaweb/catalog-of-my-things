@@ -1,39 +1,36 @@
 require 'date'
-require_relative './label'
-require_relative './author'
+# require_relative './author'
+# require_relative './label'
 
 class Item
   attr_reader :archived, :id
   attr_accessor :author, :genre, :label, :publish_date
 
-  def initialize(id, publish_date, author, label, genre)
+  def initialize(id, publish_date)
     my_date = publish_date.split('-')
-
     @id = id || Random.rand(1..999)
     @archived = false
-    @author = author
-    @genre = genre
-    @label = label
     @publish_date = Date.new(my_date[0].to_i, my_date[1].to_i, my_date[2].to_i)
-
-    print "author: #{@author}"
-
     move_to_archive
-    add_author
   end
 
   def move_to_archive
     @archived = true if can_be_archived?
   end
 
-  def add_author
-    author_names = @author.split
-    new_author = Author.new(
-      nil,
-      author_names[0],
-      author_names[1]
-    )
-    new_author.add_item
+  def add_author(author)
+    author.add_item(self)
+    @author = author
+  end
+
+  def add_genre(genre)
+    genre.add_item(self)
+    @genre = genre
+  end
+
+  def add_label(label)
+    label.add_item(self)
+    @label = label
   end
 
   private

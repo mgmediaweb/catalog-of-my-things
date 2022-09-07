@@ -1,8 +1,14 @@
 require 'json'
+# require_relative './album'
+require_relative './author'
 require_relative './book'
+# require_relative './game'
+require_relative './genre'
+require_relative './label'
 
 class IOclass
   def initialize(opc)
+    @io_write = IOwrite.new
     @type = opc
 
     @file = case @type
@@ -23,6 +29,7 @@ class IOclass
             end
   end
 
+  # READ =======================================================
   def read
     file = File.open(@file, 'a+')
     file_data = file.read
@@ -37,6 +44,7 @@ class IOclass
     arr_items
   end
 
+  # WRITE ======================================================
   def write(elems)
     file = File.open(@file, 'w')
     File.write(@file, JSON.pretty_generate(make_array(elems)))
@@ -45,36 +53,24 @@ class IOclass
 
   def make_array(elems)
     arr_items = []
-    elems.each { |item| arr_items << array_fill(item) }
+    elems.each { |item| arr_items << make_array_detail(item) }
     arr_items
   end
 
-  def array_fill(item)
+  def make_array_detail(obj)
     case @type
     when 'albums'
-      {
-        'id' => item.id, 'title' => item.title,
-        'author' => item.author, 'publish_date' => item.publish_date,
-        'spotify' => item.spotify
-      }
+      @io_write.create_obj_album(obj)
     when 'authors'
-      {
-        'id' => item.id,
-        'first_name' => item.first_name,
-        'last_name' => item.last_name
-      }
+      @io_write.create_obj_author(obj)
     when 'books'
-      {
-        'id' => item.id, 'title' => item.title,
-        'author' => item.author, 'publish_date' => item.publish_date,
-        'publisher' => item.publisher, 'cover_state' => item.cover_state
-      }
+      @io_write.create_obj_book(obj)
     when 'games'
-      {
-        'id' => item.id, 'title' => item.title,
-        'author' => item.author, 'publish_date' => item.publish_date,
-        'multiplayer' => item.multiplayer
-      }
+      @io_write.create_obj_game(obj)
+    when 'genres'
+      @io_write.create_obj_genre(obj)
+    when 'labels'
+      @io_write.create_obj_label(obj)
     end
   end
 
@@ -82,26 +78,130 @@ class IOclass
     arr_items = []
 
     elems.each do |item|
-      case @type
-      when 'books'
-        arr_items << Book.new(
-          item['title'], item['author'], item['publish_date'], item['publisher'], item['cover_state'], item['id']
-        )
-      when 'albums'
-        arr_items << Album.new(
-          item['title'], item['author'], item['publish_date'], item['spotify'], item['id']
-        )
-      when 'games'
-        arr_items << Game.new(
-          item['title'], item['author'], item['publish_date'], item['multiplayer'], item['id']
-        )
-      end
+      arr_items << make_selector(item)
     end
 
     arr_items
   end
 
+  def make_selector(obj)
+    case @type
+    when 'albums'
+      new_album(obj)
+    when 'authors'
+      new_author(obj)
+    when 'books'
+      new_book(obj)
+    when 'games'
+      new_game(obj)
+    when 'genres'
+      new_genre(obj)
+    when 'labels'
+      new_label(obj)
+    end
+  end
+
+  def new_album(obj)
+    Album.new(
+      obj['title'], obj['author'], obj['publish_date'],
+      obj['spotify'], obj['id']
+    )
+  end
+
+  def new_author(obj)
+    Author.new(obj['id'], obj['first_name'], obj['last_name'])
+  end
+
+  def new_book(obj)
+    obj['author'] = new_author(obj['author'])
+    obj['label'] = new_label(obj['label'])
+    obj['genre'] = new_genre(obj['genre'])
+
+    Book.new(
+      obj['title'], obj['author'], obj['publish_date'], obj['publisher'],
+      obj['cover_state'], obj['label'], obj['genre'], obj['id']
+    )
+  end
+
+  def new_game(obj)
+    Game.new(
+      obj['title'], obj['author'], obj['publish_date'],
+      obj['multiplayer'], obj['id']
+    )
+  end
+
+  def new_genre(obj)
+    Genre.new(obj['id'], obj['name'])
+  end
+
+  def new_label(obj)
+    Label.new(obj['id'], obj['title'], obj['color'])
+  end
+
   def close(file)
     file.close
+  end
+end
+
+class IOwrite
+  def create_obj_album(obj)
+    {
+      'id' => obj.id, 'title' => obj.title,
+      'author' => obj.author, 'publish_date' => obj.publish_date,
+      'spotify' => obj.spotify
+    }
+  end
+
+  def create_obj_author(obj)
+    print " ----> #{obj}"
+    {
+      'id' => obj.id,
+      'first_name' => obj.first_name,
+      'last_name' => obj.last_name
+    }
+  end
+
+  def create_obj_book(obj)
+    {
+      'id' => obj.id, 'title' => obj.title,
+      'publish_date' => obj.publish_date,
+      'publisher' => obj.publisher, 'cover_state' => obj.cover_state,
+      'genre' => {
+        'id' => obj.genre.id,
+        'name' => obj.genre.name
+      },
+      'label' => {
+        'id' => obj.label.id,
+        'title' => obj.label.title,
+        'color' => obj.label.color
+      },
+      'author' => {
+        'id' => obj.author.id,
+        'first_name' => obj.author.first_name,
+        'last_name' => obj.author.last_name
+      }
+    }
+  end
+
+  def create_obj_game(obj)
+    {
+      'id' => obj.id, 'title' => obj.title,
+      'author' => obj.author, 'publish_date' => obj.publish_date,
+      'multiplayer' => obj.multiplayer
+    }
+  end
+
+  def create_obj_genre(obj)
+    {
+      'id' => obj.id, 'name' => obj.name
+    }
+  end
+
+  def create_obj_label(obj)
+    {
+      'id' => obj.id,
+      'title' => obj.title,
+      'color' => obj.color
+    }
   end
 end

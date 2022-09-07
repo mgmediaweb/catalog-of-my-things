@@ -13,7 +13,7 @@ class LabelsScreen < MainScreen
   def loop_label(data)
     if data.length.positive?
       data.each do |elem|
-        line = "\n║  #{elem.title} (#{elem.author}) "
+        line = "\n║  [#{elem.id}] #{elem.title} (#{elem.color})"
         print line
         print "#{whitespace(line.length)}║"
       end
