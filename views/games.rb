@@ -19,7 +19,7 @@ class GamesScreen < MainScreen
   def loop_game(data)
     if data.length.positive?
       data.each do |elem|
-        line = "\n║  #{elem.title} (#{elem.author}) "
+        line = "\n║  #{elem.title} (Last played #{elem.last_played_at}) "
         print line
         print "#{whitespace(line.length)}║"
       end

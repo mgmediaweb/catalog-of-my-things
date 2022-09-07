@@ -3,5 +3,15 @@
     "id": 599,
     "title": "Best sellers",
     "color": "Red"
+  },
+  {
+    "id": 312,
+    "title": "Gift",
+    "color": "Blue"
+  },
+  {
+    "id": 836,
+    "title": "Favorite",
+    "color": "Yellow"
   }
 ]

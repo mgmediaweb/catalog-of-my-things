@@ -79,13 +79,53 @@ class App
     get_genre = handle_genre
     get_label = handle_label
 
-    new_book = Book.new(
+    @book_list << Book.new(
       title, get_author, publish_date, publisher,
       @cover_quality[cover_state], get_label, get_genre
     )
-
-    @book_list << new_book unless @book_list.include?(new_book)
     @io_book.write(@book_list)
+    goback
+  end
+
+  def add_album
+    @album_screen.add_album
+    print '   Enter a title: '
+    title = gets.chomp.strip.capitalize
+    print '   Enter a author: '
+    author = gets.chomp.strip.capitalize
+    print '   Enter a publish date (YYYY-MM-DD): '
+    publish_date = gets.chomp.strip
+    print '   Is available on Spotify? [Y/N]: '
+    spotify = gets.chomp.upcase
+
+    # modify this section
+    # @album_list << Album.new(
+    #   title, author, publish_date, spotify
+    # )
+    @io_album.write(@album_list)
+    goback
+  end
+
+  def add_game
+    @game_screen.add_game
+    print '   Enter a title: '
+    title = gets.chomp.strip.capitalize
+    print '   Enter a publish date (YYYY-MM-DD): '
+    publish_date = gets.chomp.strip
+    print '   Is multiplayer: [Y/N]: '
+    multiplayer = gets.chomp.strip.upcase
+    print '   Last played at: (YYYY-MM-DD): '
+    last_played = gets.chomp.strip
+
+    get_author = handle_author
+    get_genre = handle_genre
+    get_label = handle_label
+
+    @game_list << Game.new(
+      title, multiplayer, last_played, publish_date,
+      get_author, get_genre, get_label
+    )
+    @io_game.write(@game_list)
     goback
   end
 
@@ -132,45 +172,7 @@ class App
     end
 
     get_label
-  end
-
-  def add_album
-    @album_screen.add_album
-    print '   Enter a title: '
-    title = gets.chomp.strip.capitalize
-    print '   Enter a author: '
-    author = gets.chomp.strip.capitalize
-    print '   Enter a publish date (YYYY-MM-DD): '
-    publish_date = gets.chomp.strip
-    print '   Is available on Spotify? [Y/N]: '
-    spotify = gets.chomp.upcase
-
-    # modify this section
-    # @album_list << Album.new(
-    #   title, author, publish_date, spotify
-    # )
-    @io_album.write(@album_list)
-    goback
-  end
-
-  def add_game
-    @game_screen.add_game
-    print '   Enter a title: '
-    title = gets.chomp.strip.capitalize
-    print '   Enter a author: '
-    author = gets.chomp.strip.capitalize
-    print '   Enter a publish date (YYYY-MM-DD): '
-    publish_date = gets.chomp.strip
-    print '   Is multiplayer? [Y/N]: '
-    multiplayer = gets.chomp.strip.upcase
-
-    # modify this section
-    # @game_list << Game.new(
-    #   title, author, publish_date, multiplayer
-    # )
-    @io_game.write(@game_list)
-    goback
-  end
+  end  
 
   def goback
     @book_screen.success

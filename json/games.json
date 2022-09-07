@@ -1,0 +1,23 @@
+[
+  {
+    "id": 64,
+    "title": "Halo",
+    "publish_date": "2000-01-01",
+    "multiplayer": "Y",
+    "last_played_at": "2000-01-01",
+    "genre": {
+      "id": 953,
+      "name": "War"
+    },
+    "label": {
+      "id": 599,
+      "title": "Best sellers",
+      "color": "Red"
+    },
+    "author": {
+      "id": 204,
+      "first_name": "Dan",
+      "last_name": "Brown"
+    }
+  }
+]

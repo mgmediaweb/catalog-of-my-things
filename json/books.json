@@ -19,5 +19,47 @@
       "first_name": "Dan",
       "last_name": "Brown"
     }
+  },
+  {
+    "id": 378,
+    "title": "Title",
+    "publish_date": "2000-01-01",
+    "publisher": "Abc",
+    "cover_state": "bad",
+    "genre": {
+      "id": 658,
+      "name": "Fiction"
+    },
+    "label": {
+      "id": 312,
+      "title": "Gift",
+      "color": "Blue"
+    },
+    "author": {
+      "id": 760,
+      "first_name": "Abc",
+      "last_name": "Ddd"
+    }
+  },
+  {
+    "id": 769,
+    "title": "Moby dick",
+    "publish_date": "2000-01-01",
+    "publisher": "Abc",
+    "cover_state": "regular",
+    "genre": {
+      "id": 813,
+      "name": "Thiller"
+    },
+    "label": {
+      "id": 836,
+      "title": "Favorite",
+      "color": "Yellow"
+    },
+    "author": {
+      "id": 906,
+      "first_name": "Gonzalo",
+      "last_name": "Medina"
+    }
   }
 ]

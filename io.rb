@@ -2,7 +2,7 @@ require 'json'
 # require_relative './album'
 require_relative './author'
 require_relative './book'
-# require_relative './game'
+require_relative './game'
 require_relative './genre'
 require_relative './label'
 
@@ -124,9 +124,14 @@ class IOclass
   end
 
   def new_game(obj)
+    obj['author'] = new_author(obj['author'])
+    obj['label'] = new_label(obj['label'])
+    obj['genre'] = new_genre(obj['genre'])
+
     Game.new(
-      obj['title'], obj['author'], obj['publish_date'],
-      obj['multiplayer'], obj['id']
+      obj['title'], obj['multiplayer'], obj['last_played_at'],
+      obj['publish_date'], obj['author'],
+      obj['genre'], obj['label'], obj['id']
     )
   end
 
@@ -186,8 +191,23 @@ class IOwrite
   def create_obj_game(obj)
     {
       'id' => obj.id, 'title' => obj.title,
-      'author' => obj.author, 'publish_date' => obj.publish_date,
-      'multiplayer' => obj.multiplayer
+      'publish_date' => obj.publish_date,
+      'multiplayer' => obj.multiplayer,
+      'last_played_at' => obj.last_played_at,
+      'genre' => {
+        'id' => obj.genre.id,
+        'name' => obj.genre.name
+      },
+      'label' => {
+        'id' => obj.label.id,
+        'title' => obj.label.title,
+        'color' => obj.label.color
+      },
+      'author' => {
+        'id' => obj.author.id,
+        'first_name' => obj.author.first_name,
+        'last_name' => obj.author.last_name
+      }
     }
   end
 
