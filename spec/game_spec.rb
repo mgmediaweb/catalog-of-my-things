@@ -18,4 +18,8 @@ describe Game do
   it 'can_be_achieved? return false if @last_played_at is < 2' do
     expect(@game1.can_be_achieved?).to eq false
   end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> d7ad1bbe28b98bfaf5f537d0297492d3786cf176
