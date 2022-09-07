@@ -1,7 +1,7 @@
 require 'date'
 require_relative '../album'
 
-describe MusicAlbum do
+describe Album do
   before :each do
     @music_album = Album.new('Peeling the Mask', '2010-10-25', false)
   end
