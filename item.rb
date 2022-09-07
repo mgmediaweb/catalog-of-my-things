@@ -1,6 +1,4 @@
 require 'date'
-# require_relative './author'
-# require_relative './label'
 
 class Item
   attr_reader :archived, :id

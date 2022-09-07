@@ -91,17 +91,19 @@ class App
     @album_screen.add_album
     print '   Enter a title: '
     title = gets.chomp.strip.capitalize
-    print '   Enter a author: '
-    author = gets.chomp.strip.capitalize
     print '   Enter a publish date (YYYY-MM-DD): '
     publish_date = gets.chomp.strip
-    print '   Is available on Spotify? [Y/N]: '
+    print '   Is available on Spotify [Y/N]: '
     spotify = gets.chomp.upcase
 
-    # modify this section
-    # @album_list << Album.new(
-    #   title, author, publish_date, spotify
-    # )
+    get_author = handle_author
+    get_genre = handle_genre
+    get_label = handle_label
+
+    @album_list << Album.new(
+      title, get_author, publish_date, spotify,
+      get_label, get_genre
+    )
     @io_album.write(@album_list)
     goback
   end
@@ -172,7 +174,7 @@ class App
     end
 
     get_label
-  end  
+  end
 
   def goback
     @book_screen.success
@@ -204,7 +206,7 @@ class Control
   end
 
   def select_genre
-    @book_screen.add_book('Add Gender')
+    @book_screen.add_book('Add Genre')
     print '   Enter name: '
     genre = gets.chomp.strip.capitalize
     Genre.new(nil, genre)

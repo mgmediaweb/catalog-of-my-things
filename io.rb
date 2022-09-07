@@ -1,5 +1,5 @@
 require 'json'
-# require_relative './album'
+require_relative './album'
 require_relative './author'
 require_relative './book'
 require_relative './game'
@@ -102,9 +102,13 @@ class IOclass
   end
 
   def new_album(obj)
+    obj['author'] = new_author(obj['author'])
+    obj['label'] = new_label(obj['label'])
+    obj['genre'] = new_genre(obj['genre'])
+
     Album.new(
       obj['title'], obj['author'], obj['publish_date'],
-      obj['spotify'], obj['id']
+      obj['spotify'], obj['label'], obj['genre'], obj['id']
     )
   end
 
@@ -152,8 +156,21 @@ class IOwrite
   def create_obj_album(obj)
     {
       'id' => obj.id, 'title' => obj.title,
-      'author' => obj.author, 'publish_date' => obj.publish_date,
-      'spotify' => obj.spotify
+      'publish_date' => obj.publish_date, 'spotify' => obj.spotify,
+      'genre' => {
+        'id' => obj.genre.id,
+        'name' => obj.genre.name
+      },
+      'label' => {
+        'id' => obj.label.id,
+        'title' => obj.label.title,
+        'color' => obj.label.color
+      },
+      'author' => {
+        'id' => obj.author.id,
+        'first_name' => obj.author.first_name,
+        'last_name' => obj.author.last_name
+      }
     }
   end
 

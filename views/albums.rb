@@ -16,36 +16,17 @@ class AlbumsScreen < MainScreen
     footer
   end
 
-  def list_genres(data)
-    header
-    print "\n║  List of genres                                           ║"
-    print "\n╠═══════════════════════════════════════════════════════════╣"
-    print "\n║                                                           ║"
-    loop_genre(data)
-    footer
-  end
-
   def loop_album(data)
     if data.length.positive?
       data.each do |elem|
-        line = "\n║  #{elem.title} (#{elem.author}) "
+        show_spotify = elem.spotify == 'Y' ? 'YES' : 'NO'
+
+        line = "\n║  #{elem.title} (#{elem.author.first_name} #{elem.author.last_name}) - Spotify: #{show_spotify}"
         print line
         print "#{whitespace(line.length)}║"
       end
     else
       print "\n║                -- No albums availables --                 ║"
-    end
-  end
-
-  def loop_genre(data)
-    if data.length.positive?
-      data.each do |elem|
-        line = "\n║  #{elem.title} (#{elem.author}) "
-        print line
-        print "#{whitespace(line.length)}║"
-      end
-    else
-      print "\n║                -- No genres availables --                 ║"
     end
   end
 end
