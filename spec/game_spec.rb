@@ -14,7 +14,7 @@ describe Game do
   it 'Returns properties with getter' do
     expect(@game.title).to eq('Domino')
     expect(@game.multiplayer).to eq 'Y'
-    expect(@game.last_played_at).to eq('2013-11-24')
+    expect(@game.last_played_at).to eq(Date.parse('2013-11-24'))
   end
 
   # it 'can_be_achieved? return false if @last_played_at is < 2' do
