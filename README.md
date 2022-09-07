@@ -5,6 +5,8 @@
 This project involves creating a console app that helps one keep a record of different types of things they own: books, music albums, movies, and games. Everything is based on the UML class diagram presented below. 
 The data is stored in JSON files but a database ia also prepared with tables structure analogical to the program's class structure.
 
+![image](https://user-images.githubusercontent.com/93031593/188942612-ed37d8f3-448d-48d5-a5ca-c14deff5dc09.png)
+
 ## Built With
 
 - Ruby
