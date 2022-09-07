@@ -7,7 +7,7 @@ describe Book do
   end
 
   context "#initialize" do 
-    it '' do 
+    it '#initialize' do 
       
     end
   end
