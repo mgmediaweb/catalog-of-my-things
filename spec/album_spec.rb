@@ -23,5 +23,4 @@ describe Album do
   it 'should return false if music album is not on spotify' do
     expect(@music_album.spotify).to eq('Y')
   end
-
 end
