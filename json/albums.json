@@ -1,0 +1,42 @@
+[
+  {
+    "id": 900,
+    "title": "Sdas",
+    "publish_date": "2000-01-01",
+    "spotify": "N",
+    "genre": {
+      "id": 813,
+      "name": "Thiller"
+    },
+    "label": {
+      "id": 599,
+      "title": "Best sellers",
+      "color": "Red"
+    },
+    "author": {
+      "id": 204,
+      "first_name": "Dan",
+      "last_name": "Brown"
+    }
+  },
+  {
+    "id": 430,
+    "title": "Patience",
+    "publish_date": "2000-01-01",
+    "spotify": "N",
+    "genre": {
+      "id": 285,
+      "name": "Rock"
+    },
+    "label": {
+      "id": 599,
+      "title": "Best sellers",
+      "color": "Red"
+    },
+    "author": {
+      "id": 263,
+      "first_name": "Guns",
+      "last_name": "And roses"
+    }
+  }
+]

@@ -1,28 +1,20 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Catalog of my things
 
 > Description the project.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
+- Ruby
+- PostreSQL
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
 
+> To view this project, please clone this repository, go to the installation folder and run the program **Ruby main.rb** (You must have Ruby language installer on your computer).
 
-To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
@@ -37,20 +29,13 @@ To get a local copy up and running follow these simple example steps.
 ### Deployment
 
 
-
 ## Authors
 
-👤 **Author1**
+👤 **Gonzalo A. Medina**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@mgmediaweb](https://github.com/mgmediaweb)
+- Twitter: [@GonzoMedinaDev](https://twitter.com/GonzoMedinaDev)
+- LinkedIn: [gonzalo-medina-g](https://www.linkedin.com/in/gonzalo-medina-g/)
 
 ## 🤝 Contributing
 
