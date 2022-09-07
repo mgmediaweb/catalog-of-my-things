@@ -28,7 +28,6 @@
 
 ### Deployment
 
-
 ## Authors
 
 👤 **Gonzalo A. Medina**
@@ -36,6 +35,13 @@
 - GitHub: [@mgmediaweb](https://github.com/mgmediaweb)
 - Twitter: [@GonzoMedinaDev](https://twitter.com/GonzoMedinaDev)
 - LinkedIn: [gonzalo-medina-g](https://www.linkedin.com/in/gonzalo-medina-g/)
+
+👤 **Addisu Haile**
+
+- GitHub: [@Addisu87](https://github.com/Addisu87)
+- Twitter: [@AddisuTedla](https://twitter.com/AddisuTedla)
+- LinkedIn: [Addisu Tedla](www.linkedin.com/in/addisu-tedla/)
+
 
 ## 🤝 Contributing
 
