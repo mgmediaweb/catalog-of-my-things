@@ -16,7 +16,7 @@ class Game < Item
 
   def can_be_archived?
     @archieved = Time.new.year - Date.parse(@last_played_at)
-    return true if super() || @archieved > 2
+    return true if super || @archieved > 2
   
      false
     end
