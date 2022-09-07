@@ -11,16 +11,13 @@ describe Game do
     @game = Game.new('Domino', 'Y', '2013-11-24', '2014-10-12', @author, @genre, @label)
   end
 
-  it 'Crate a new instance of Game' do
-    expect(@game.title).to eq('Domino')
-  end
-
   it 'Returns properties with getter' do
+    expect(@game.title).to eq('Domino')
     expect(@game.multiplayer).to eq 'Y'
-    expect(@game.last_played_at).to eq Date.parse('2013-11-24')
+    expect(@game.last_played_at).to eq('2013-11-24')
   end
 
   # it 'can_be_achieved? return false if @last_played_at is < 2' do
-  #   expert(@game.archived).to eq false
+  #   expert(@game.can_be_archived?).to eq false
   # end
 end
