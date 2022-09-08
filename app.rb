@@ -129,16 +129,21 @@ class App
   end
 
   def handle_author
-    @book_screen.add_book('Select Author', 'authors', @author_list)
-    author = gets.chomp.to_i
+    get_author = nil
 
-    if author.zero?
-      get_author = @control.select_author
-      @author_list << get_author
-      @io_author.write(@author_list)
-    else
-      get_author = @control.find_array(author, @author_list)
-      handle_author unless get_author
+    loop do
+      @book_screen.add_book('Select Author', 'authors', @author_list)
+      author = gets.chomp.to_i
+
+      if author.zero?
+        get_author = @control.select_author
+        @author_list << get_author
+        @io_author.write(@author_list)
+      else
+        get_author = @control.find_array(author, @author_list)
+      end
+
+      break if get_author
     end
 
     get_author
@@ -161,32 +166,42 @@ class App
   end
 
   def handle_genre
-    @book_screen.add_book('Select Genre', 'genres', @genre_list)
-    genre = gets.chomp.to_i
+    get_genre = nil
 
-    if genre.zero?
-      get_genre = @control.select_genre
-      @genre_list << get_genre
-      @io_genre.write(@genre_list)
-    else
-      get_genre = @control.find_array(genre, @genre_list)
-      handle_genre unless get_genre
+    loop do
+      @book_screen.add_book('Select Genre', 'genres', @genre_list)
+      genre = gets.chomp.to_i
+
+      if genre.zero?
+        get_genre = @control.select_genre
+        @genre_list << get_genre
+        @io_genre.write(@genre_list)
+      else
+        get_genre = @control.find_array(genre, @genre_list)
+      end
+
+      break if get_genre
     end
 
     get_genre
   end
 
   def handle_label
-    @book_screen.add_book('Select Label', 'labels', @label_list)
-    label = gets.chomp.to_i
+    get_label = nil
 
-    if label.zero?
-      get_label = @control.select_label
-      @label_list << get_label
-      @io_label.write(@label_list)
-    else
-      get_label = @control.find_array(label, @label_list)
-      handle_label unless get_label
+    loop do
+      @book_screen.add_book('Select Label', 'labels', @label_list)
+      label = gets.chomp.to_i
+
+      if label.zero?
+        get_label = @control.select_label
+        @label_list << get_label
+        @io_label.write(@label_list)
+      else
+        get_label = @control.find_array(label, @label_list)
+      end
+
+      break if get_label
     end
 
     get_label
