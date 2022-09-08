@@ -1,0 +1,65 @@
+[
+  {
+    "id": 766,
+    "title": "The da vinci code",
+    "publish_date": "2003-03-18",
+    "publisher": "Doubleplay",
+    "cover_state": "good",
+    "genre": {
+      "id": 538,
+      "name": "Mistery"
+    },
+    "label": {
+      "id": 808,
+      "title": "Top-sellers",
+      "color": "Red"
+    },
+    "author": {
+      "id": 225,
+      "first_name": "Dan",
+      "last_name": "Brown"
+    }
+  },
+  {
+    "id": 209,
+    "title": "Sadasd",
+    "publish_date": "2000-01-01",
+    "publisher": "Asda",
+    "cover_state": "good",
+    "genre": {
+      "id": 521,
+      "name": "Sandbox"
+    },
+    "label": {
+      "id": 808,
+      "title": "Top-sellers",
+      "color": "Red"
+    },
+    "author": {
+      "id": 161,
+      "first_name": "Freddie",
+      "last_name": "Mercury"
+    }
+  },
+  {
+    "id": 377,
+    "title": "Dadas",
+    "publish_date": "2000-01-01",
+    "publisher": "Dasdas",
+    "cover_state": "good",
+    "genre": {
+      "id": 667,
+      "name": "Wwwww"
+    },
+    "label": {
+      "id": 808,
+      "title": "Top-sellers",
+      "color": "Red"
+    },
+    "author": {
+      "id": 377,
+      "first_name": "Markus",
+      "last_name": "Persson"
+    }
+  }
+]

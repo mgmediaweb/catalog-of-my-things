@@ -1,0 +1,44 @@
+[
+  {
+    "id": 55,
+    "title": "Minecraft",
+    "publish_date": "2011-11-18",
+    "multiplayer": "Y",
+    "last_played_at": "2021-12-24",
+    "genre": {
+      "id": 521,
+      "name": "Sandbox"
+    },
+    "label": {
+      "id": 800,
+      "title": "Favorites",
+      "color": "Yellow"
+    },
+    "author": {
+      "id": 377,
+      "first_name": "Markus",
+      "last_name": "Persson"
+    }
+  },
+  {
+    "id": 832,
+    "title": "Civilitazion vi",
+    "publish_date": "2020-03-20",
+    "multiplayer": "Y",
+    "last_played_at": "2022-03-02",
+    "genre": {
+      "id": 334,
+      "name": "Civilization"
+    },
+    "label": {
+      "id": 895,
+      "title": "Multiplayer",
+      "color": "Yellow"
+    },
+    "author": {
+      "id": 995,
+      "first_name": "Geoff",
+      "last_name": "Knorr"
+    }
+  }
+]
