@@ -1,44 +1,23 @@
 [
   {
-    "id": 64,
-    "title": "Halo",
-    "publish_date": "2000-01-01",
-    "multiplayer": "Y",
-    "last_played_at": "2000-01-01",
-    "genre": {
-      "id": 953,
-      "name": "War"
-    },
-    "label": {
-      "id": 599,
-      "title": "Best sellers",
-      "color": "Red"
-    },
-    "author": {
-      "id": 204,
-      "first_name": "Dan",
-      "last_name": "Brown"
-    }
-  },
-  {
-    "id": 974,
+    "id": 55,
     "title": "Minecraft",
-    "publish_date": "1976-09-17",
+    "publish_date": "2011-11-18",
     "multiplayer": "Y",
-    "last_played_at": "2020-05-15",
+    "last_played_at": "2021-12-24",
     "genre": {
-      "id": 695,
-      "name": "Arcade"
+      "id": 521,
+      "name": "Sandbox"
     },
     "label": {
-      "id": 836,
-      "title": "Favorite",
+      "id": 800,
+      "title": "Favorites",
       "color": "Yellow"
     },
     "author": {
-      "id": 236,
-      "first_name": "Atari",
-      "last_name": "Japan"
+      "id": 377,
+      "first_name": "Markus",
+      "last_name": "Persson"
     }
   }
 ]

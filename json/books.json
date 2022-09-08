@@ -1,86 +1,23 @@
 [
   {
-    "id": 588,
+    "id": 766,
     "title": "The da vinci code",
-    "publish_date": "2003-04-01",
-    "publisher": "Double day",
+    "publish_date": "2003-03-18",
+    "publisher": "Doubleplay",
     "cover_state": "good",
     "genre": {
-      "id": 658,
-      "name": "Fiction"
+      "id": 538,
+      "name": "Mistery"
     },
     "label": {
-      "id": 599,
-      "title": "Best sellers",
+      "id": 808,
+      "title": "Top-sellers",
       "color": "Red"
     },
     "author": {
-      "id": 204,
+      "id": 225,
       "first_name": "Dan",
       "last_name": "Brown"
-    }
-  },
-  {
-    "id": 378,
-    "title": "Title",
-    "publish_date": "2000-01-01",
-    "publisher": "Abc",
-    "cover_state": "bad",
-    "genre": {
-      "id": 658,
-      "name": "Fiction"
-    },
-    "label": {
-      "id": 312,
-      "title": "Gift",
-      "color": "Blue"
-    },
-    "author": {
-      "id": 760,
-      "first_name": "Abc",
-      "last_name": "Ddd"
-    }
-  },
-  {
-    "id": 769,
-    "title": "Moby dick",
-    "publish_date": "2000-01-01",
-    "publisher": "Abc",
-    "cover_state": "regular",
-    "genre": {
-      "id": 813,
-      "name": "Thiller"
-    },
-    "label": {
-      "id": 836,
-      "title": "Favorite",
-      "color": "Yellow"
-    },
-    "author": {
-      "id": 906,
-      "first_name": "Gonzalo",
-      "last_name": "Medina"
-    }
-  },
-  {
-    "id": 604,
-    "title": "Ghjk",
-    "publish_date": "2022-03-02",
-    "publisher": "Hj",
-    "cover_state": "bad",
-    "genre": {
-      "id": 813,
-      "name": "Thiller"
-    },
-    "label": {
-      "id": 836,
-      "title": "Favorite",
-      "color": "Yellow"
-    },
-    "author": {
-      "id": 263,
-      "first_name": "Guns",
-      "last_name": "And roses"
     }
   }
 ]

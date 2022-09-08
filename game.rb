@@ -16,10 +16,9 @@ class Game < Item
   )
     super(id, publish_date)
 
-    my_date = last_played_at.split('-')
     @title = title
     @multiplayer = multiplayer
-    @last_played_at = Date.new(my_date[0].to_i, my_date[1].to_i, my_date[2].to_i)
+    @last_played_at = Date.parse(last_played_at)
 
     add_author(author)
     add_genre(genre)
@@ -27,9 +26,8 @@ class Game < Item
   end
 
   def can_be_archived?
-    today = Date.today
-    two_years = Date.new(today.year - 2, today.month, today.day)
+    return true if ((DateTime.now - @publish_date) / 365).to_i > 2
 
-    super && @last_played < two_years
+    false
   end
 end

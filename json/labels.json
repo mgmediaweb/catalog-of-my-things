@@ -1,22 +1,12 @@
 [
   {
-    "id": 599,
-    "title": "Best sellers",
+    "id": 808,
+    "title": "Top-sellers",
     "color": "Red"
   },
   {
-    "id": 312,
-    "title": "Gift",
-    "color": "Blue"
-  },
-  {
-    "id": 836,
-    "title": "Favorite",
+    "id": 800,
+    "title": "Favorites",
     "color": "Yellow"
-  },
-  {
-    "id": 635,
-    "title": "Oldies",
-    "color": "Brown"
   }
 ]

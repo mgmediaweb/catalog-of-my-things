@@ -5,10 +5,9 @@ class Item
   attr_accessor :author, :genre, :label, :publish_date
 
   def initialize(id, publish_date)
-    my_date = publish_date.split('-')
     @id = id || Random.rand(1..999)
     @archived = false
-    @publish_date = Date.new(my_date[0].to_i, my_date[1].to_i, my_date[2].to_i)
+    @publish_date = Date.parse(publish_date)
     move_to_archive
   end
 

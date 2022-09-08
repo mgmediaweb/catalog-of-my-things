@@ -1,26 +1,14 @@
 [
   {
-    "id": 658,
-    "name": "Fiction"
+    "id": 538,
+    "name": "Mistery"
   },
   {
-    "id": 813,
-    "name": "Thiller"
+    "id": 823,
+    "name": "Progressive rock"
   },
   {
-    "id": 953,
-    "name": "War"
-  },
-  {
-    "id": 285,
-    "name": "Rock"
-  },
-  {
-    "id": 695,
-    "name": "Arcade"
-  },
-  {
-    "id": 955,
-    "name": "Country"
+    "id": 521,
+    "name": "Sandbox"
   }
 ]
