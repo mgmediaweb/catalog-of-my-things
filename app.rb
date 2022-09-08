@@ -81,9 +81,7 @@ class App
     get_genre = handle_genre
     get_label = handle_label
 
-    @book_list << Book.new(
-      title, get_author, publish_date, publisher, @cover_quality[cover_state], get_label, get_genre
-    )
+    @book_list << Book.new(title, get_author, publish_date, publisher, @cover_quality[cover_state], get_label, get_genre)
     @io_book.write(@book_list)
     goback
   end
@@ -102,9 +100,7 @@ class App
     get_genre = handle_genre
     get_label = handle_label
 
-    @album_list << Album.new(
-      title, get_author, publish_date, spotify, get_label, get_genre
-    )
+    @album_list << Album.new(title, get_author, publish_date, spotify, get_label, get_genre)
     @io_album.write(@album_list)
     goback
   end
@@ -125,9 +121,7 @@ class App
     get_genre = handle_genre
     get_label = handle_label
 
-    @game_list << Game.new(
-      title, multiplayer, last_played, publish_date, get_author, get_genre, get_label
-    )
+    @game_list << Game.new(title, multiplayer, last_played, publish_date, get_author, get_genre, get_label)
     @io_game.write(@game_list)
     goback
   end
