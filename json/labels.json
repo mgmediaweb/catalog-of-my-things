@@ -8,5 +8,10 @@
     "id": 800,
     "title": "Favorites",
     "color": "Yellow"
+  },
+  {
+    "id": 895,
+    "title": "Multiplayer",
+    "color": "Yellow"
   }
 ]

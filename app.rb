@@ -142,6 +142,7 @@ class App
       @io_author.write(@author_list)
     else
       get_author = @control.find_array(author, @author_list)
+      handle_author unless get_author
     end
 
     get_author
@@ -154,7 +155,8 @@ class App
       print "   #{title} (YYYY-MM-DD): "
       input_date = gets.chomp.strip
 
-      break if Mydate.new(input_date).validate
+      year, month, day = input_date.split('-')
+      break if Date.valid_date?(year.to_i, month.to_i, day.to_i)
 
       print "   « Invalid date, please a enter again »\n"
     end
@@ -172,6 +174,7 @@ class App
       @io_genre.write(@genre_list)
     else
       get_genre = @control.find_array(genre, @genre_list)
+      handle_genre unless get_genre
     end
 
     get_genre
@@ -187,6 +190,7 @@ class App
       @io_label.write(@label_list)
     else
       get_label = @control.find_array(label, @label_list)
+      handle_label unless get_label
     end
 
     get_label
@@ -195,25 +199,6 @@ class App
   def goback
     @book_screen.success
     sleep(2)
-  end
-end
-
-class Mydate
-  def initialize(input_date)
-    @my_date = input_date.split('-')
-    @year = @my_date[0].to_i.abs
-    @month = @my_date[1].to_i.abs
-    @day = @my_date[2].to_i.abs
-  end
-
-  def validate
-    if @my_date.length == 3 && @month <= 12 && @day <= 31
-      validated = Date.new(@my_date[0].to_i, @my_date[1].to_i, @my_date[2].to_i)
-
-      return true if validated <= Date.parse('2030-12-31') && validated >= Date.parse('1950-01-01')
-    end
-
-    false
   end
 end
 
