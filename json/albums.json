@@ -1,0 +1,22 @@
+[
+  {
+    "id": 413,
+    "title": "Fsdfsd",
+    "publish_date": "2000-01-01",
+    "spotify": "N",
+    "genre": {
+      "id": 990,
+      "name": "Sdfsd"
+    },
+    "label": {
+      "id": 171,
+      "title": "Sdfsdf",
+      "color": "4242"
+    },
+    "author": {
+      "id": 817,
+      "first_name": "Dasdasd",
+      "last_name": "Asdas"
+    }
+  }
+]
