@@ -81,7 +81,9 @@ class App
     get_genre = handle_genre
     get_label = handle_label
 
-    @book_list << Book.new(title, get_author, publish_date, publisher, @cover_quality[cover_state], get_label, get_genre)
+    @book_list << Book.new(
+      title, get_author, publish_date, publisher, @cover_quality[cover_state], get_label, get_genre
+    )
     @io_book.write(@book_list)
     goback
   end
